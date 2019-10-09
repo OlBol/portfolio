@@ -1,13 +1,52 @@
 .reviews {
-    &__title {
-        margin-bottom: 20px;
+    padding: 100px 0;
+
+    @include tablets {
+        padding: 190px 0 60px;
+    }
+
+    @include desktop {
+        padding: 190px 0 100px;
+        width: 90%;
+    }
+
+    @include desktopHd {
+        padding: 250px 0 100px;
+        width: 65%;
     }
 
     &__wrap {
+        margin-bottom: 30px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+
+        @include tablets {
+            margin-bottom: 55px;
+            justify-content: flex-start;
+        }
+
+        @include desktop {
+            //width: 90%;
+            margin-bottom: 85px;
+        }
+    }
+
+    &__title {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+
+        @include tablets {
+            margin-right: 40px;
+            margin-bottom: 0;
+            padding-right: 15px;
+            flex-basis: 50%;
+        }
+
+        @include desktop {
+            margin-right: 0;
+        }
     }
 
     &__btn {
@@ -17,13 +56,17 @@
         border: 1px solid $text-color;
         border-radius: 100%;
 
-        &:after {
+        @include tablets {
+
+        }
+
+            &:after {
             position: absolute;
             content: "";
             width: 8px;
             height: 10px;
             background-image: url("./src/images/icons/btn-arrow.svg");
-            background-size: cover;
+            background-size: contain;
             background-repeat: no-repeat;
             top: 50%;
             left: 50%;
@@ -42,6 +85,10 @@
     &__list {
         display: flex;
         overflow: hidden;
+
+        @include desktop {
+            //width: 90%;
+        }
     }
 
     &__item {
@@ -50,16 +97,47 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+
+        @include tablets {
+            padding: 0 35px 0 40px;
+            flex-basis: 50%;
+            min-width: 50%;
+        }
+
+        @include desktop {
+            padding-left: 90px;
+            position: relative;
+        }
+
+        &:before {
+            @include desktop {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 69px;
+                height: 63px;
+                background-image: url('./src/images/icons/quote.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: .05;
+            }
+        }
     }
 
     &__text {
-        margin: 30px 0 20px;
+        margin-bottom: 25px;
+        //max-width: 325px;
         opacity: .5;
         color: $text-color;
         font-family: "Open Sans", Helvetica, sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 1.7;
+
+        @include desktop {
+            font-size: 16px;
+        }
     }
 
     &__photo {
@@ -69,6 +147,15 @@
         border-radius: 100%;
         object-fit: cover;
         object-position: top;
+
+        @include tablets {
+            width: 75px;
+            height: 75px;
+        }
+
+        @include desktop {
+
+        }
     }
 
     &__name {
@@ -77,6 +164,10 @@
         font-size: 16px;
         font-weight: 700;
         line-height: 2;
+
+        @include desktop {
+            font-size: 18px;
+        }
     }
 
     &__position {
@@ -84,7 +175,11 @@
         font-family: "Open Sans", Helvetica, sans-serif;
         font-size: 14px;
         font-weight: 400;
-        line-height: 1.5;
+        line-height: 1.8;
         opacity: .3;
+
+        @include desktop {
+            font-size: 16px;
+        }
     }
 }

@@ -17,15 +17,16 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+  min-width: 320px;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1480px;
-  width: 95%;
+  width: 82%;
 
-  @include phones {
-    width: 83%;
+  @include tablets {
+    width: 90%;
   }
 }
 
@@ -35,11 +36,21 @@ body {
 }
 
 .title {
+  text-align: center;
   font-size: 24px;
   line-height: 2;
   font-weight: 700;
   font-family: "Open Sans", Helvetica, sans-serif;
   color: $text-color;
+
+  @include tablets {
+    text-align: left;
+    font-size: 30px;
+  }
+
+  @include desktop {
+    font-size: 36px;
+  }
 }
 
 button {
