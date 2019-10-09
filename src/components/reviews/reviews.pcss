@@ -1,0 +1,90 @@
+.reviews {
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__btn {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $text-color;
+        border-radius: 100%;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 10px;
+            background-image: url("./src/images/icons/btn-arrow.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &--prev {
+            margin-right: 30px;
+
+            &:after {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        overflow: hidden;
+    }
+
+    &__item {
+        flex-basis: 100%;
+        min-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__text {
+        margin: 30px 0 20px;
+        opacity: .5;
+        color: $text-color;
+        font-family: "Open Sans", Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+
+    &__photo {
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &__name {
+        color: $text-color;
+        font-family: "Open Sans", Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 2;
+    }
+
+    &__position {
+        color: $text-color;
+        font-family: "Open Sans", Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        opacity: .3;
+    }
+}
