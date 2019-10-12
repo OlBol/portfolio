@@ -1,0 +1,14 @@
+.form
+    .container
+        h2.form__title.title Связаться со мной
+        form.form__block(action='')
+            .form__wrap.form__wrap--name
+                label.form__label.form__label--name Введите ваше имя
+                input.form__input(type='text' placeholder='Ковальчук Дмитрий')
+            .form__wrap.form__wrap--email
+                label.form__label.form__label--mail Введите ваш email
+                input.form__input(type='email' placeholder='loftschool@study.com')
+            .form__wrap.form__wrap--text
+                label.form__label.form__label--text Сообщение к письму
+                textarea.form__input( placeholder='Требуется ваша помощь в создании сайта.\n' + 'Интересуют сроки и цена вопроса')
+            button.form__btn(type='submit') Отправить

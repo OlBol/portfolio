@@ -1,0 +1,39 @@
+.budda-parallax {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    @include laptop-only {
+        background-image: url('./src/images/budda-bg.png');
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__img {
+        display: none;
+
+        @include laptop {
+            position: absolute;
+            display: block;
+            bottom: 0;
+            right: 0;
+
+            &--bg {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &--mountains {
+                width: 100%;
+                bottom: 0;
+            }
+
+            &--budda {
+                bottom: 20%;
+                right: -200px;
+            }
+        }
+    }
+}

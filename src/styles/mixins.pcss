@@ -16,6 +16,20 @@
   }
 }
 
+$tablet-only: 1025px;
+
+@mixin laptop() {
+  @media screen and (min-width: $tablet-only) {
+    @content;
+  }
+}
+
+@mixin laptop-only() {
+  @media screen and (max-width: $tablet-only) {
+    @content;
+  }
+}
+
 //@mixin phones() {
 //  @media screen and (max-width: $bp-phones) {
 //    @content;
