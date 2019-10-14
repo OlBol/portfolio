@@ -2,17 +2,138 @@
     padding: 65px 0 60px;
     background-color: $footer-color;
 
+    @include desktop {
+        padding: 80px 0;
+    }
+
+    &__container {
+        @include tablets {
+            display: flex;
+        }
+    }
+
+    &__block {
+        @include tablets {
+            margin-right: 70px;
+            min-width: 170px;
+        }
+
+        @include desktop {
+            margin-right: 120px;
+        }
+
+        @include desktopHd {
+            margin-right: 170px;
+            min-width: 350px;
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    &__wrapper {
+        @include desktop {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
     &__year {
+        margin-bottom: 30px;
         display: flex;
         align-items: center;
-        color: $white-color;
+        color: $light-gray;
         font-size: 48px;
         font-weight: 600;
-        opacity: .1;
         line-height: 1;
+
+        @include desktopHd {
+            margin-right: 60px;
+        }
     }
 
     &__symbol {
-        font-size: 40px;
+        font-size: 34px;
+        font-weight: 700;
+    }
+
+    &__name {
+        margin-bottom: 50px;
+        color: $white-color;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: "Open Sans", Helvetica, sans-serif;
+    }
+
+    &__position {
+        margin-top: 15px;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: .2;
+        text-transform: none;
+
+        @include tablets {
+            margin-top: 30px;
+        }
+    }
+
+    &__menu {
+        margin-bottom: 50px;
+
+        @include tablets {
+            margin-bottom: 60px;
+        }
+
+        @include desktop {
+            margin-bottom: 70px;
+            flex-basis: 100%;
+        }
+    }
+
+    &__wrap {
+        @include desktop {
+            flex-basis: 50%;
+        }
+
+        &--socials {
+            @include desktop {
+                padding-right: 55px;
+            }
+        }
+    }
+
+    &__about {
+        margin-bottom: 20px;
+
+        @include desktop {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__socials {
+        margin-bottom: 50px;
+
+        @include tablets {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__blockquote {
+        margin-bottom: 30px;
+
+        @include tablets {
+            margin-bottom: 20px;
+        }
+
+        @include desktop {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__author {
+        font-style: italic;
+        opacity: 1;
+        color: $white-color;
+        letter-spacing: -0.02rem;
     }
 }

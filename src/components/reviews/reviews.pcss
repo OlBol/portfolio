@@ -11,12 +11,17 @@
 
     @include desktopHd {
         padding: 250px 0 100px;
-        width: 65%;
     }
 
     &__container {
         @include desktop {
-            padding-right: 15%;
+            padding-right: 28%;
+        }
+    }
+
+    &__wrapper {
+        @include desktopHd {
+            //width: 80%;
         }
     }
 
@@ -57,7 +62,7 @@
         position: relative;
         width: 50px;
         height: 50px;
-        border: 1px solid $text-color;
+        border: 1px solid $main-color;
         border-radius: 100%;
 
             &:after {
@@ -92,7 +97,8 @@
         min-width: 100%;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
 
         @include tablets {
             padding: 0 35px 0 40px;
@@ -103,6 +109,10 @@
         @include desktop {
             padding-left: 90px;
             position: relative;
+        }
+
+        @include desktopHd {
+            margin-left: 15px;
         }
 
         &:before {
@@ -123,16 +133,18 @@
 
     &__text {
         margin-bottom: 25px;
-        opacity: .5;
-        color: $text-color;
-        font-family: "Open Sans", Helvetica, sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.7;
 
         @include desktop {
             font-size: 16px;
         }
+
+        @include desktopHd {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__block {
+        display: flex;
     }
 
     &__photo {
@@ -150,7 +162,7 @@
     }
 
     &__name {
-        color: $text-color;
+        color: $main-color;
         font-family: "Open Sans", Helvetica, sans-serif;
         font-size: 16px;
         font-weight: 700;
@@ -162,7 +174,7 @@
     }
 
     &__position {
-        color: $text-color;
+        color: $main-color;
         font-family: "Open Sans", Helvetica, sans-serif;
         font-size: 14px;
         font-weight: 400;

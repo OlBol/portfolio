@@ -10,7 +10,7 @@ body {
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $text-color;
+  color: $main-color;
 }
 
 .wrapper {
@@ -38,10 +38,10 @@ body {
 .title {
   text-align: center;
   font-size: 24px;
-  line-height: 2;
+  line-height: 1;
   font-weight: 700;
   font-family: "Open Sans", Helvetica, sans-serif;
-  color: $text-color;
+  color: $main-color;
 
   @include tablets {
     text-align: left;
@@ -51,6 +51,14 @@ body {
   @include desktop {
     font-size: 36px;
   }
+}
+
+.text {
+  color: $light-gray;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 .wrapper__budda {
