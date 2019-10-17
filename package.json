@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "rm -rf dist && webpack --mode=production --progress",
-    "test": "eslint ./src/main.js && stylelint ./src/main.pcss"
+    "test": "eslint ./src/main.js && stylelint ./src/main.pcss",
+    "create-component": "node ./cli/create-component.js"
   },
   "author": "Olga Bolotova",
   "license": "ISC",

@@ -1,0 +1,50 @@
+.promo-parallax {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url('./src/images/promo-bg.png');
+    background-position: center;
+    background-size: cover;
+
+    @include laptop {
+        background-image: url('./src/images/pp-sky.png');
+        background-position: center -300px;
+    }
+
+    &__layer {
+        display: none;
+
+        @include laptop {
+            position: absolute;
+            display: block;
+            bottom: 0;
+            right: 0;
+            will-change: transform;
+
+            &--mountation {
+                width: 100%;
+            }
+
+            &--balloon {
+                top: 30%;
+                left: 60%;
+            }
+
+            &--cloud {
+                top: 40%;
+            }
+
+            &--man {
+                left: 0;
+            }
+
+            &--haze {
+                width: 200%;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -30%;
+            }
+        }
+    }
+}

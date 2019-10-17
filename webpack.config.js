@@ -26,10 +26,6 @@ module.exports = (env, argv) => {
 
     const styles = {
         test: /\.(p|post|)css$/,
-        // use: [
-        //     // isProductionBuild ? MiniCssExtractPlugin.loader :
-        //         "css-loader",  "postcss-loader"
-        // ]
         use: [ 'style-loader', 'postcss-loader' ]
     };
 

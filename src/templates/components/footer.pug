@@ -1,0 +1,20 @@
+footer.footer
+    .footer__container.container
+        .footer__block
+            .footer__year
+                span.footer__symbol &#9400;
+                | &nbsp;2019
+            .footer__name Владимир Астахов
+                .footer__position Личный сайт  веб-разработчика
+        .footer__wrapper
+            .footer__menu
+                include menu
+                +menu('footer')
+            .footer__wrap.footer__wrap--socials
+                .footer__about.text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__socials
+                    include socials
+                    +socials('footer')
+            .footer__wrap
+                p.footer__blockquote.text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                .footer__author Martin Golding

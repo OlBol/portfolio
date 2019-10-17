@@ -1,0 +1,183 @@
+.reviews {
+    padding: 100px 0;
+
+    @include tablets {
+        padding: 190px 0 60px;
+    }
+
+    @include desktop {
+        padding: 190px 0 100px;
+    }
+
+    @include desktopHd {
+        padding: 250px 0 100px;
+    }
+
+    &__container {
+        @include desktop {
+            padding-right: 28%;
+        }
+    }
+
+    &__wrapper {
+        overflow: hidden;
+    }
+
+    &__wrap {
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include tablets {
+            margin-bottom: 55px;
+            justify-content: flex-start;
+        }
+
+        @include desktop {
+            margin-bottom: 85px;
+        }
+    }
+
+    &__title {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+
+        @include tablets {
+            margin-right: 40px;
+            margin-bottom: 0;
+            padding-right: 15px;
+            flex-basis: 50%;
+        }
+
+        @include desktop {
+            margin-right: 0;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $main-color;
+        border-radius: 100%;
+
+            &:after {
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 10px;
+            background-image: url("./src/images/icons/btn-arrow.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &--prev {
+            margin-right: 30px;
+
+            &:after {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        flex-basis: 100%;
+        min-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablets {
+            padding: 0 35px 0 40px;
+            flex-basis: 50%;
+            min-width: 50%;
+        }
+
+        @include desktop {
+            padding-left: 90px;
+            position: relative;
+        }
+
+        @include desktopHd {
+            margin-left: 15px;
+        }
+
+        &:before {
+            @include desktop {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 69px;
+                height: 63px;
+                background-image: url('./src/images/icons/quote.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: .05;
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 25px;
+
+        @include desktop {
+            font-size: 16px;
+        }
+
+        @include desktopHd {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__block {
+        display: flex;
+    }
+
+    &__photo {
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: top;
+
+        @include tablets {
+            width: 75px;
+            height: 75px;
+        }
+    }
+
+    &__name {
+        color: $main-color;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 2;
+
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+
+    &__position {
+        color: $main-color;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.8;
+        opacity: .3;
+
+        @include desktop {
+            font-size: 16px;
+        }
+    }
+}
