@@ -49,14 +49,31 @@
             width: 24px;
             background-color: $main-color;
             content: '';
+            transition: transform $speed, top $speed, bottom $speed;
         }
 
         &:before {
-            bottom: 0;
+            top: 0;
         }
 
         &:after {
-            top: 0;
+            bottom: 0;
+        }
+
+        &.is-open {
+            position: relative;
+            z-index: 2;
+            background-image: none;
+
+            &:before {
+                top: 8px;
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                bottom: 8px;
+                transform: rotate(-45deg);
+            }
         }
     }
 }

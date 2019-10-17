@@ -4,7 +4,11 @@
 
     &__link {
         &--header {
-            margin: 0 20px;
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
 
         &--footer {
@@ -14,7 +18,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid $light-gray;
+            border: 1px solid $gray-color;
             border-radius: 100%;
         }
     }
@@ -42,7 +46,7 @@
         }
 
         &--footer {
-            fill: $light-gray;
+            fill: $gray-color;
         }
     }
 }

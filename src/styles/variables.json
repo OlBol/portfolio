@@ -3,10 +3,12 @@
   "links-color": "#4b6fd7",
   "white-color": "#fff",
   "footer-color": "#1f232d",
-  "light-gray": "#62656c",
+  "gray-color": "#62656c",
+  "border-menu-color": "#dcdcdc",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
+  "bp-laptop": "1024px",
   "bp-tablets": "768px",
-  "bp-phones": "480px",
-  "gradient": "#ad00ed 0%, #5500f2 100%"
+  "gradient": "#ad00ed 0%, #5500f2 100%",
+  "speed": ".4s"
 }

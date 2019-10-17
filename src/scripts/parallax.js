@@ -1,5 +1,7 @@
 export default class {
-    constructor() {}
+    constructor() {
+        this.div = 2;
+    }
 
     init(options) {
         const that = this;
@@ -7,10 +9,10 @@ export default class {
         this.area = options.area;
         this.layers = options.layers;
 
-        window.addEventListener('scroll', this.moveLayers.bind(that));
+        window.addEventListener('scroll', this._moveLayers.bind(that));
     }
 
-    moveLayers() {
+    _moveLayers() {
         const coord = this.area.getBoundingClientRect();
 
         if(coord.top < this.area.clientHeight && coord.bottom > 0) {
@@ -18,7 +20,7 @@ export default class {
 
             this.layers.forEach(item => {
                 const speed = item.dataset.speed;
-                const value = speed * scrollY / 2;
+                const value = speed * scrollY / this.div;
 
                 item.style.transform = `translateY(-${value}px)`;
             });
