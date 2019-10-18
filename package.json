@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "autoprefixer": "^9.6.4",
+    "inputmask": "^4.0.9",
+    "jquery": "^3.4.1",
     "postcss-advanced-variables": "^3.0.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-inline-svg": "^4.1.0",

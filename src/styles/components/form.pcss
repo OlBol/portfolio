@@ -38,32 +38,39 @@
         }
     }
 
+    &__icon {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        fill: $gray-color;
+
+        &--name {
+            width: 26px;
+            height: 28px;
+        }
+
+        &--email {
+            width: 26px;
+            height: 28px;
+        }
+
+        &--text {
+            bottom: 22px;
+            width: 26px;
+            height: 28px;
+        }
+    }
+
     .form__wrap {
         position: relative;
         margin-bottom: 25px;
         flex-basis: 100%;
-
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: .3;
-        }
 
         &--name {
             @include tablets {
                 flex-basis: 100%;
                 max-width: 50%;
                 margin-right: 20px;
-            }
-
-            &:before {
-                width: 26px;
-                height: 28px;
-                background-image: url('./src/images/icons/avatar.svg');
             }
         }
 
@@ -72,22 +79,40 @@
                 flex-basis: inherit;
                 flex-grow: 1;
             }
-
-            &:before {
-                width: 26px;
-                height: 28px;
-                background-image: url('./src/images/icons/email.svg');
-            }
         }
 
-        &--text {
-            border-bottom: 2px solid $main-color;
+        &.is-error {
+            .form__input {
+                border-color: #cd1515;
+            }
 
-            &:before {
-                bottom: 22px;
-                width: 26px;
-                height: 28px;
-                background-image: url('./src/images/icons/chat.svg');
+            .form__error {
+                position: absolute;
+                left: 45px;
+                bottom: -25px;
+                padding: 8px 15px;
+                display: block;
+                font-size: 14px;
+                color: #fff;
+                background-color: #cd1515;
+                z-index: 1;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid #cd1515;
+                }
+            }
+
+            .form__icon {
+                fill: #cd1515;
             }
         }
     }
@@ -111,12 +136,15 @@
         font-size: 14px;
         font-weight: 700;
         line-height: 1.7;
-        font-family: Open Sans,Helvetica,sans-serif;
+        font-family: 'Open Sans', Helvetica, sans-serif;
 
         &--text {
             padding: 25px 45px;
-            border-bottom: none;
         }
+    }
+
+    &__error {
+        display: none;
     }
 
     &__btn {
