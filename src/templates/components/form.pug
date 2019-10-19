@@ -1,7 +1,7 @@
 .form
     .container
         h2.form__title.title Связаться со мной
-        form.form__block.j-form(action='https://webdev-api.loftschool.com/sendmail/')
+        form.form__block.j-form(action='https://webdev-api.loftschool.com/sendmail' method='POST')
             .form__wrap.form__wrap--name
                 label.form__label.form__label--name Введите ваше имя
                     +icon('avatar', 'form__icon form__icon--name')
