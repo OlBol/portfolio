@@ -1,6 +1,17 @@
 .header {
+    position: fixed;
     padding: 65px 0;
     width: 100%;
+    transition: background-color $speed, padding $speed;
+
+    @include desktop {
+        position: static;
+    }
+
+    &.is-active {
+        padding: 30px 0;
+        background-color: rgba($white-color, .7);
+    }
 
     &__container {
         display: flex;

@@ -4,6 +4,7 @@ import Parallax from './scripts/parallax';
 import PopupMenu from './scripts/popupMenu';
 import Form from './scripts/sendForm';
 import AnchorScroll from './scripts/anchorScroll';
+import HeaderFixating from './scripts/headerFixating';
 
 if (process.env.NODE_ENV === 'development') {
     require('file-loader!./index.pug');
@@ -39,3 +40,9 @@ form.init({
 const anchorScroll = new AnchorScroll();
 
 anchorScroll.init();
+
+const headerFixating = new HeaderFixating();
+
+headerFixating.init({
+    header: document.querySelector('.js-header')
+});

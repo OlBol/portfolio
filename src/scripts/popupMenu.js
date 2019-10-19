@@ -9,8 +9,12 @@ export default class {
 
         this.button = options.button;
         this.template = options.template;
+        this.links = document.querySelectorAll('a');
 
         this.button.addEventListener('click', this._toogleMenu.bind(that));
+        this.links.forEach(link => {
+            link.addEventListener('click', this._toogleMenu.bind(that));
+        });
     }
 
     _toogleMenu() {
