@@ -3,6 +3,7 @@ import './main.pcss';
 import Parallax from './scripts/parallax';
 import PopupMenu from './scripts/popupMenu';
 import Form from './scripts/sendForm';
+import AnchorScroll from './scripts/anchorScroll';
 
 if (process.env.NODE_ENV === 'development') {
     require('file-loader!./index.pug');
@@ -34,3 +35,7 @@ const form = new Form();
 form.init({
     form: document.querySelector('.j-form')
 });
+
+const anchorScroll = new AnchorScroll();
+
+anchorScroll.init();
