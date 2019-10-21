@@ -1,7 +1,7 @@
 export default class {
     constructor() {
         this.activeClass = 'is-open';
-        this.hiddenClass = 'overflow-hidden';
+        this.hiddenClass = 'is-hidden';
     }
 
     init(options) {
@@ -9,7 +9,8 @@ export default class {
 
         this.button = options.button;
         this.template = options.template;
-        this.links = document.querySelectorAll('a');
+        this.header = document.querySelector('.js-header');
+        this.links = document.querySelectorAll('.js-mobile-menu a');
 
         this.button.addEventListener('click', this._toogleMenu.bind(that));
         this.links.forEach(link => {
@@ -21,5 +22,6 @@ export default class {
         this.button.classList.toggle(this.activeClass);
         this.template.classList.toggle(this.activeClass);
         document.body.classList.toggle(this.hiddenClass);
+        this.header.classList.toggle(this.hiddenClass);
     }
 }

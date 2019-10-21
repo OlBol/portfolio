@@ -1,5 +1,6 @@
 .promo {
     height: 100vh;
+    max-height: 1000px;
     padding-top: 220px;
 
     @include tablets {
@@ -7,7 +8,7 @@
     }
 
     @include desktop {
-        padding-bottom: 200px;
+        padding-bottom: 160px;
     }
 
     &__container {
@@ -46,7 +47,7 @@
         }
     }
 
-    &__btn {
+    &__scroll-btn {
         display: none;
 
         @include desktop {
@@ -55,7 +56,7 @@
             font-size: 18px;
             font-weight: 400;
             color: $main-color;
-            font-family: Open Sans,Helvetica,sans-serif;
+            text-decoration: none;
         }
     }
 

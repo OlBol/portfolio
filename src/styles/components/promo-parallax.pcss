@@ -3,13 +3,18 @@
     height: 100%;
     width: 100%;
     z-index: -1;
-    background-image: url('./src/images/promo-bg.png');
+    background-image: url("./src/images/promo-bg.png");
     background-position: center;
     background-size: cover;
+    clip-path: polygon(0% 0%, 0% 97.5%, 50% 100%, 100% 97.5%, 100% 0%);
 
     @include laptop {
-        background-image: url('./src/images/pp-sky.png');
+        background-image: url("./src/images/pp-sky.png");
         background-position: center -300px;
+    }
+
+    @include desktop {
+        clip-path: polygon(0% 0%, 0% 96%, 50% 100%, 100% 96%, 100% 0%);
     }
 
     &__layer {
@@ -37,6 +42,10 @@
 
             &--man {
                 left: 0;
+            }
+
+            &--avalanche {
+                bottom: 10%;
             }
 
             &--haze {

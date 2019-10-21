@@ -82,8 +82,9 @@
         }
 
         &.is-error {
+
             .form__input {
-                border-color: #cd1515;
+                border-color: $error-color;
             }
 
             .form__error {
@@ -93,26 +94,26 @@
                 padding: 8px 15px;
                 display: block;
                 font-size: 14px;
-                color: #fff;
-                background-color: #cd1515;
+                color: $white-color;
+                background-color: $error-color;
                 z-index: 1;
+            }
 
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: -10px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 0;
-                    height: 0;
-                    border-left: 10px solid transparent;
-                    border-right: 10px solid transparent;
-                    border-bottom: 10px solid #cd1515;
-                }
+            .form__error:before {
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid $error-color;
             }
 
             .form__icon {
-                fill: #cd1515;
+                fill: $error-color;
             }
         }
     }
@@ -130,13 +131,13 @@
         padding: 15px 45px;
         width: 100%;
         background-color: transparent;
-        border: none;
+        border: 0;
         border-bottom: 2px solid $main-color;
         color: $main-color;
         font-size: 14px;
         font-weight: 700;
         line-height: 1.7;
-        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-family: "Open Sans", Helvetica, sans-serif;
 
         &--text {
             padding: 25px 45px;

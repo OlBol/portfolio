@@ -41,6 +41,7 @@ const anchorScroll = new AnchorScroll();
 
 anchorScroll.init();
 
+
 const headerFixating = new HeaderFixating();
 
 headerFixating.init({
