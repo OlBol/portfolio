@@ -2,11 +2,18 @@ import Inputmask from 'inputmask';
 import Validate from './validate';
 
 export default class {
+    /**
+     * Валидация формы обратной связи.
+     */
     constructor() {
         this.phoneMask = '+7 999 99-99-99';
     }
 
+    /**
+     * @param options {object} - объект с данными, указывающими на элемент с формой.
+     */
     init(options) {
+        console.log(options.form);
         this.form = options.form;
         this.inputs = this.form.querySelectorAll('.js-input');
         this.action = this.form.action;
@@ -21,6 +28,11 @@ export default class {
         this._bindEvents(this.inputs);
     }
 
+    /**
+     * Вызывает отправку формы, если все поля прошли валидацию успешно.
+     * @param inputs {object} - NodeList из input-элементов формы.
+     * @private
+     */
     _bindEvents(inputs) {
         const validate = new Validate();
 
@@ -44,6 +56,11 @@ export default class {
         })
     }
 
+    /**
+     * Выводит маску в поле для ввода номера телефона.
+     * @param input {HTMLElement} - поле формы для ввода номера теелфона.
+     * @private
+     */
     _putPhoneMask(input) {
         const inputmask = new Inputmask({
             'mask': this.phoneMask,
@@ -53,33 +70,41 @@ export default class {
         inputmask.mask(input);
     }
 
+    /**
+     * Отправка формы.
+     * @private
+     */
     _sendForm() {
         const formData = new FormData(this.form);
+
+        formData.append('name', 'fsdf');
+        formData.append('phone', '84444444444');
+        formData.append('comment', 'resfsdf');
+        formData.append('to', 'olbolot@gmail.com');
 
         fetch(this.action, {
             method: this.method,
             headers: { 'X-Requested-With':'XMLHttpRequest' },
             body: formData
         })
-            .then(this._checkStatus)
-            .then(response => response.json())
-            .then(message => {
-            console.log(message);
-            this._clearForm();
+            // .then(this._checkStatus)
+            .then(response => {
+                if (response.ok) {
+                    response.json();
+                }
+            })
+            .then(() => {
+                this._clearForm();
         })
             .catch(error => {
-            console.log(error);
+                console.log(error);
         });
     }
 
-    _checkStatus(response) {
-        if (response < 400) {
-            return response;
-        } else {
-            throw new Error(response.status);
-        }
-    }
-
+    /**
+     * Делает поля формы пустыми.
+     * @private
+     */
     _clearForm() {
         this.inputs.forEach(input => {
             input.value = '';
