@@ -33,6 +33,7 @@ popupMenu.init({
 
 const form = new Form();
 
+
 form.init({
     form: document.querySelector('.j-form')
 });
