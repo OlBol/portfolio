@@ -13,16 +13,13 @@ export default class {
      * @param options {object} - объект с данными, указывающими на элемент с формой.
      */
     init(options) {
-        console.log(options.form);
         this.form = options.form;
         this.inputs = this.form.querySelectorAll('.js-input');
         this.action = this.form.action;
         this.method = this.form.method;
 
         this.inputs.forEach(input => {
-            if (input.name === 'phone') {
-                this._putPhoneMask(input)
-            }
+            if (input.name === 'phone') this._putPhoneMask(input);
         });
 
         this._bindEvents(this.inputs);
@@ -45,15 +42,11 @@ export default class {
             });
 
             for (const field in valResult) {
-                if (valResult[field] === false) {
-                    result = false;
-                }
+                if (valResult[field] === false) result = false;
             }
 
-            if (result === true) {
-                this._sendForm();
-            }
-        })
+            if (result === true) this._sendForm();
+        });
     }
 
     /**
@@ -89,16 +82,10 @@ export default class {
         })
             // .then(this._checkStatus)
             .then(response => {
-                if (response.ok) {
-                    response.json();
-                }
+                if (response.ok) response.json();
             })
-            .then(() => {
-                this._clearForm();
-        })
-            .catch(error => {
-                console.log(error);
-        });
+            .then(() => this._clearForm())
+            .catch(error => console.log(error));
     }
 
     /**
@@ -106,8 +93,6 @@ export default class {
      * @private
      */
     _clearForm() {
-        this.inputs.forEach(input => {
-            input.value = '';
-        })
+        this.inputs.forEach(input => input.value = '');
     }
 }

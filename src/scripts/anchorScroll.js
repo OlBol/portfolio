@@ -1,9 +1,15 @@
 export default class {
+    /**
+     * Плавный скролл страницы для ссылок-якорей.
+     */
     constructor() {
         this.links = document.querySelectorAll('a[href^="#"');
         this.speed = 0.5;
     }
 
+    /**
+     * При клике на ссылку-якорь вызывается requestAnimationFrame с метод _countStep.
+     */
     init() {
         for(const link of this.links) {
             link.addEventListener('click', e => {
@@ -20,6 +26,11 @@ export default class {
         }
     }
 
+    /**
+     * Шаг для requestAnimationFrame для скролла страницы.
+     * @param time {number} - время начала анимации.
+     * @private
+     */
     _countStep(time) {
         if (this.start === null) this.start = time;
 
