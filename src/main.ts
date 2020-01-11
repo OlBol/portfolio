@@ -1,25 +1,21 @@
 import './main.pcss';
 
-import Parallax from './scripts/parallax';
-import PopupMenu from './scripts/popupMenu';
-import Form from './scripts/sendForm';
-import AnchorScroll from './scripts/anchorScroll';
-import HeaderFixating from './scripts/headerFixating';
+import parallax from './scripts/parallax.ts';
+import PopupMenu from './scripts/popupMenu.ts';
+import Form from './scripts/sendForm.ts';
+import AnchorScroll from './scripts/anchorScroll.ts';
+import HeaderFixating from './scripts/headerFixating.ts';
 
 if (process.env.NODE_ENV === 'development') {
     require('file-loader!./index.pug');
 }
 
-const promoParallax = new Parallax();
-
-promoParallax.init({
+parallax({
     area: document.querySelector('.js-promo-parallax'),
     layers: document.querySelectorAll('.js-promo-layer')
 });
 
-const buddaParallax = new Parallax();
-
-buddaParallax.init({
+parallax({
     area: document.querySelector('.js-budda-parallax'),
     layers: document.querySelectorAll('.js-budda-layer')
 });

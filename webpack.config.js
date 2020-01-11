@@ -1,22 +1,17 @@
-const path = require("path");
+const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProductionBuild = argv.mode === 'production';
 
     const js = {
-        test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        options: {
-            presets: ['@babel/preset-env'],
-            plugins: ["@babel/plugin-syntax-dynamic-import"]
-        }
+        test: /\.ts$/,
+        loader: 'ts-loader'
     };
 
     const pug = {
@@ -31,9 +26,9 @@ module.exports = (env, argv) => {
 
     const files = {
         test: /\.(png|jpe?g|gif|woff2?)$/i,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-            name: "[hash].[ext]"
+            name: '[hash].[ext]'
         }
     };
 
@@ -41,21 +36,21 @@ module.exports = (env, argv) => {
         test: /\.svg$/,
         use: [
             {
-                loader: "svg-sprite-loader",
+                loader: 'svg-sprite-loader',
                 options: {
                     extract: true,
                     spriteFilename: svgPath => `sprite${svgPath.substr(-4)}`
                 }
             },
-            "svg-transform-loader",
+            'svg-transform-loader',
             {
-                loader: "svgo-loader",
+                loader: 'svgo-loader',
                 options: {
                     plugins: [
                         { removeTitle: true },
                         {
                             removeAttrs: {
-                                attrs: "(fill|stroke)"
+                                attrs: '(fill|stroke)'
                             }
                         }
                     ]
@@ -65,10 +60,10 @@ module.exports = (env, argv) => {
     };
 
     const config = {
-        entry: './src/main.js',
+        entry: './src/main.ts',
 
         output: {
-            path: path.resolve(__dirname, "./dist"),
+            path: path.resolve(__dirname, './dist'),
             filename: 'index.js'
         },
 
@@ -95,7 +90,7 @@ module.exports = (env, argv) => {
         config.devtool = 'none';
         config.plugins = (config.plugins || []).concat([
             new webpack.DefinePlugin({
-                "process.env": {
+                'process.env': {
                     NODE_ENV: '"production"'
                 }
             }),
