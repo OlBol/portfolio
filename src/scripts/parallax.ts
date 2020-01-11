@@ -1,13 +1,13 @@
-interface parallaxOptions {
+interface ParallaxOptions {
     area: HTMLElement;
     layers: NodeListOf<HTMLElement>
 }
 
 /**
- * Parallax.
+ * @description Parallax scrolling effect.
  * @param options – parallax area and parallax layers data.
  */
-export default function parallax(options: parallaxOptions) {
+export default function parallax(options: ParallaxOptions) {
     const div: number = 2;
     const area: HTMLElement = options.area;
     const layers: NodeListOf<HTMLElement> = options.layers;

@@ -1,7 +1,7 @@
 import './main.pcss';
 
 import parallax from './scripts/parallax.ts';
-import PopupMenu from './scripts/popupMenu.ts';
+import popupMenu from './scripts/popupMenu.ts';
 import Form from './scripts/sendForm.ts';
 import AnchorScroll from './scripts/anchorScroll.ts';
 import HeaderFixating from './scripts/headerFixating.ts';
@@ -20,9 +20,7 @@ parallax({
     layers: document.querySelectorAll('.js-budda-layer')
 });
 
-const popupMenu = new PopupMenu();
-
-popupMenu.init({
+popupMenu({
     button: document.querySelector('.js-toggle-btn'),
     template: document.querySelector('.js-mobile-menu')
 });
