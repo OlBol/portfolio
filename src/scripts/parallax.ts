@@ -1,6 +1,6 @@
 interface ParallaxOptions {
     area: HTMLElement;
-    layers: NodeListOf<HTMLElement>
+    layers: NodeListOf<HTMLElement>;
 }
 
 /**

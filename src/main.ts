@@ -2,7 +2,7 @@ import './main.pcss';
 
 import parallax from './scripts/parallax.ts';
 import popupMenu from './scripts/popupMenu.ts';
-import Form from './scripts/sendForm.ts';
+import sendForm from './scripts/sendForm.ts';
 import AnchorScroll from './scripts/anchorScroll.ts';
 import HeaderFixating from './scripts/headerFixating.ts';
 
@@ -25,10 +25,8 @@ popupMenu({
     template: document.querySelector('.js-mobile-menu')
 });
 
-const form = new Form();
 
-
-form.init({
+sendForm({
     form: document.querySelector('.j-form')
 });
 
