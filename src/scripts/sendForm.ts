@@ -1,7 +1,7 @@
 import Inputmask from 'inputmask';
 import formValidate from './validate.ts';
 
-interface formOptions {
+interface FormOptions {
     form: HTMLElement;
 }
 
@@ -9,7 +9,7 @@ interface formOptions {
  * @description Work with form data and submit to server.
  * @param options {object} - an object with data points to a form element.
  */
-export default function sendForm(options: formOptions) {
+export default function sendForm(options: FormOptions) {
     const phoneMask: string = '+7 999 99-99-99';
     const form = options.form as HTMLFormElement;
     const inputs = form.querySelectorAll('.js-input');

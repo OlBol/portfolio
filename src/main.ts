@@ -4,7 +4,7 @@ import parallax from './scripts/parallax.ts';
 import popupMenu from './scripts/popupMenu.ts';
 import sendForm from './scripts/sendForm.ts';
 import anchorScroll from './scripts/anchorScroll.ts';
-import HeaderFixating from './scripts/headerFixating.ts';
+import headerFixating from './scripts/headerFixating.ts';
 
 if (process.env.NODE_ENV === 'development') {
     require('file-loader!./index.pug');
@@ -32,8 +32,6 @@ sendForm({
 
 anchorScroll();
 
-const headerFixating = new HeaderFixating();
-
-headerFixating.init({
+headerFixating({
     header: document.querySelector('.js-header')
 });
