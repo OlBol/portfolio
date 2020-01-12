@@ -3,7 +3,7 @@ import './main.pcss';
 import parallax from './scripts/parallax.ts';
 import popupMenu from './scripts/popupMenu.ts';
 import sendForm from './scripts/sendForm.ts';
-import AnchorScroll from './scripts/anchorScroll.ts';
+import anchorScroll from './scripts/anchorScroll.ts';
 import HeaderFixating from './scripts/headerFixating.ts';
 
 if (process.env.NODE_ENV === 'development') {
@@ -30,10 +30,7 @@ sendForm({
     form: document.querySelector('.j-form')
 });
 
-const anchorScroll = new AnchorScroll();
-
-anchorScroll.init();
-
+anchorScroll();
 
 const headerFixating = new HeaderFixating();
 
