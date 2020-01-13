@@ -5,6 +5,7 @@ import popupMenu from './scripts/popupMenu.ts';
 import sendForm from './scripts/sendForm.ts';
 import anchorScroll from './scripts/anchorScroll.ts';
 import headerFixating from './scripts/headerFixating.ts';
+import reviewSlider from './scripts/reviewSlider.ts';
 
 if (process.env.NODE_ENV === 'development') {
     require('file-loader!./index.pug');
@@ -35,3 +36,5 @@ anchorScroll();
 headerFixating({
     header: document.querySelector('.js-header')
 });
+
+reviewSlider();

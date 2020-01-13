@@ -3,9 +3,9 @@ section#reviews.reviews
         .reviews__wrapper
             .reviews__wrap
                 h2.reviews__title.title Что обо мне говорят
-                button.reviews__btn.reviews__btn--prev(type='button' aria-label='Вернуться к предыдущиму отзыву')
-                button.reviews__btn.reviews__btn--next(type='button' aria-label='Следующий отзыв')
-            ul.reviews__list
+                button.reviews__btn.reviews__btn--prev.js-scroll-to-prev(type='button' aria-label='Вернуться к предыдущиму отзыву')
+                button.reviews__btn.reviews__btn--next.js-scroll-to-next(type='button' aria-label='Следующий отзыв')
+            ul.reviews__list.js-review-slider
                 li.reviews__item
                     .reviews__text.text
                         p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
