@@ -5,6 +5,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = (env, argv) => {
     const isProductionBuild = argv.mode === 'production';
@@ -14,9 +15,22 @@ module.exports = (env, argv) => {
         loader: 'ts-loader'
     };
 
+    const vue = {
+        test: /\.vue$/,
+        loader: "vue-loader"
+    };
+
     const pug = {
         test: /\.pug$/,
-        loader: 'pug-loader'
+        oneOf: [
+            {
+                resourceQuery: /^\?vue/,
+                use: ["pug-plain-loader"]
+            },
+            {
+                use: ["pug-loader"]
+            }
+        ]
     };
 
     const styles = {
@@ -74,7 +88,13 @@ module.exports = (env, argv) => {
         devtool: 'source-map',
 
         module: {
-            rules: [js, styles, files, svg, pug]
+            rules: [js, styles, files, svg, pug, vue]
+        },
+
+        resolve: {
+            alias: {
+                vue$: "vue/dist/vue.esm.js"
+            }
         },
 
         plugins: [
@@ -82,7 +102,8 @@ module.exports = (env, argv) => {
                 title: 'Портфолио',
                 template: './src/index.pug'
             }),
-            new SpriteLoaderPlugin({ plainSprite: true })
+            new SpriteLoaderPlugin({ plainSprite: true }),
+            new VueLoaderPlugin()
         ]
     };
 

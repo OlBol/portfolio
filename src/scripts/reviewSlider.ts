@@ -1,10 +1,16 @@
+interface SliderOptions {
+    slider: HTMLElement;
+    scrollBtnToPrev: HTMLButtonElement;
+    scrollBtnToNext: HTMLButtonElement;
+}
+
 /**
  * @description Reviews slider.
  */
-export default function reviewSlider() {
-    const slider: HTMLElement = document.querySelector('.js-review-slider');
-    const scrollBtnToPrev: HTMLButtonElement = document.querySelector('.js-scroll-to-prev');
-    const scrollBtnToNext: HTMLButtonElement = document.querySelector('.js-scroll-to-next');
+export default function reviewSlider(options: SliderOptions) {
+    const slider = options.slider;
+    const scrollBtnToPrev = options.scrollBtnToPrev;
+    const scrollBtnToNext = options.scrollBtnToNext;
     const numberOfSlides = slider.children.length;
     const step: number = 15;
     let sliderPosition: number = 0;
