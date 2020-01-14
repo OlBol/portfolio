@@ -11,6 +11,18 @@
         &:last-child {
             margin-right: 0;
         }
+
+        &--footer {
+            padding-bottom: 35px;
+
+            @include tablets {
+                margin-right: 50px;
+            }
+
+            @include laptop {
+                padding-bottom: 0;
+            }
+        }
     }
 
     &__link {

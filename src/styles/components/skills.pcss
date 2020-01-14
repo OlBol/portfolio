@@ -1,5 +1,5 @@
 .skills {
-    position: relative;
+    //position: relative;
     padding: 95px 0 240px;
 
     @include tablets {
@@ -10,38 +10,75 @@
         padding: 140px 0 0;
     }
 
-    &:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 270px;
-        height: 240px;
-        background-image: url("./src/images/backpack.png");
-        background-size: cover;
-        background-repeat: no-repeat;
+    //&:before {
+    //    content: "";
+    //    position: absolute;
+    //    bottom: 0;
+    //    left: 50%;
+    //    transform: translateX(-50%);
+    //    width: 270px;
+    //    height: 240px;
+    //    background-image: url("./src/images/backpack.png");
+    //    background-size: cover;
+    //    background-repeat: no-repeat;
+    //
+    //    @include tablets {
+    //        width: 315px;
+    //        height: 280px;
+    //    }
+    //
+    //    @include desktop {
+    //        width: 700px;
+    //        height: 630px;
+    //        left: -230px;
+    //        transform: none;
+    //    }
+    //
+    //    @include desktopHd {
+    //        left: 0;
+    //    }
+    //}
 
-        @include tablets {
-            width: 315px;
-            height: 280px;
-        }
+    &__container {
+        position: relative;
 
         @include desktop {
-            width: 700px;
-            height: 630px;
-            left: -230px;
-            transform: none;
+            padding-left: 25%;
         }
 
         @include desktopHd {
-            left: 0;
+            padding-left: 500px;
         }
-    }
 
-    &__container {
-        @include desktop {
-            padding-left: 25%;
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: -275px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 270px;
+            height: 240px;
+            background-image: url("./src/images/backpack.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            @include tablets {
+                bottom: -340px;
+                width: 315px;
+                height: 280px;
+            }
+
+            @include desktop {
+                width: 700px;
+                height: 630px;
+                left: -290px;
+                bottom: 0;
+                transform: none;
+            }
+
+            @include desktopHd {
+                left: -150px;
+            }
         }
     }
 
@@ -102,17 +139,25 @@
     }
 
     &__list {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
 
+        @include desktop {
+            justify-content: flex-start;
+        }
     }
 
     &__item {
         position: relative;
-        margin-bottom: 10px;
+        margin: 0 1% 10px;
         list-style: none;
+
+        @include desktop {
+            margin-left: 0;
+            margin-right: 2%;
+        }
     }
 
     &__icon {
@@ -142,32 +187,31 @@
 
         &--under {
             stroke: #eaeaea;
-            stroke-width: 5px;
+            stroke-width: 7px;
 
             @include tablets {
                 stroke-width: 8px;
             }
 
             @include desktop {
-                stroke-width: 10px;
+                stroke-width: 9px;
             }
         }
 
         &--above {
-            stroke: #5500f2;
-            stroke-width: 10px;
+            stroke-width: 13px;
 
             @include tablets {
                 stroke-width: 14px;
             }
 
             @include desktop {
-                stroke-width: 17px;
+                stroke-width: 15px;
             }
 
-            @include desktopHd {
-                stroke-width: 20px;
-            }
+            //@include desktopHd {
+            //    stroke-width: 20px;
+            //}
         }
     }
 

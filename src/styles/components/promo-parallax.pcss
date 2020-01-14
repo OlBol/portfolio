@@ -8,7 +8,7 @@
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 97.5%, 50% 100%, 100% 97.5%, 100% 0%);
 
-    @include laptop {
+    @include tablets {
         background-image: url("./src/images/pp-sky.png");
         background-position: center -300px;
     }
@@ -20,7 +20,7 @@
     &__layer {
         display: none;
 
-        @include laptop {
+        @include tablets {
             position: absolute;
             display: block;
             bottom: 0;
@@ -34,14 +34,27 @@
             &--balloon {
                 top: 30%;
                 left: 60%;
+
+                @include laptop {
+                    top: 20%;
+                }
+
+                @include desktopHd {
+                    top: 10%;
+                }
             }
 
             &--cloud {
                 top: 40%;
+
+                @include desktop {
+                    top: 30%;
+                }
             }
 
             &--man {
                 left: 0;
+                bottom: 10%;
             }
 
             &--avalanche {
@@ -52,7 +65,15 @@
                 width: 200%;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: -30%;
+                bottom: -15%;
+
+                @include desktop {
+                    bottom: -35%;
+                }
+
+                @include desktopHd {
+                    bottom: -60%;
+                }
             }
         }
     }

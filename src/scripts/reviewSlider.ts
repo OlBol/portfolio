@@ -23,7 +23,6 @@ export default function reviewSlider() {
             currentSlide--;
             changeBtnState();
             requestAnimationFrame(countStep);
-
         }
     });
 

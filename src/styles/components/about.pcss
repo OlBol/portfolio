@@ -37,6 +37,7 @@
     }
 
     &__table-content {
+        width: 50%;
         color: $main-color;
         font-size: 14px;
         font-weight: 400;
@@ -47,11 +48,15 @@
     }
 
     &__title {
-        margin-bottom: 50px;
+        margin: 10px 0 45px;
         font-size: 30px;
         font-weight: 700;
         line-height: 1.2;
         color: $main-color;
+
+        @include desktop {
+            margin-top: 20px;
+        }
     }
 
     &__text {

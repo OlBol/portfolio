@@ -4,18 +4,20 @@ section#works.works
         .works__work-number 2
         .works__slider
             .works__main-work
-                +image('promo-slide.jpg', '', '')
+                +image('promo-slide.jpg', 'works__img', '')
             .works__preview-block
                 .works__preview-work
-                    +image('home-slide.jpg', '', '')
+                    +image('home-slide.jpg', 'works__img', '')
                 .works__preview-work
-                    +image('mountains-slide.jpg', '', '')
+                    +image('mountains-slide.jpg', 'works__img', '')
                 .works__preview-work
-                    +image('autumn-slide.jpg', '', '')
+                    +image('autumn-slide.jpg', 'works__img', '')
                 .works__preview-work
-                    +image('car-slide.jpg', '', '')
-            button.works__btn.works__btn--prev(type='button' aria-label='Предыдущий слайд')
+                    +image('car-slide.jpg', 'works__img', '')
+            button.works__btn.works__btn--prev(type='button' aria-label='Предыдущий слайд' disabled)
+                +icon('btn-arrow', 'works__btn-icon')
             button.works__btn.works__btn--next(type='button' aria-label='Следующий слайд')
+                +icon('btn-arrow', 'works__btn-icon works__btn-icon--next')
         .works__wrapper
             .works__tags
                 span.works__tag HTML
