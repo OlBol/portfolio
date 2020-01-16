@@ -22,21 +22,5 @@
     "slide": "slider_preview3.jpg",
     "link": "//loftschool.com",
     "desc": "Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
-  },
-  {
-    "id": 4,
-    "title": "4 Сайт школы образования",
-    "skills": "Html, CSS, JavaScript",
-    "slide": "slider_preview4.jpg",
-    "link": "//loftschool.com",
-    "desc": "Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
-  },
-  {
-    "id": 5,
-    "title": "5 Сайт школы образования",
-    "skills": "Html, CSS, JavaScript",
-    "slide": "slider_preview5.jpg",
-    "link": "//loftschool.com",
-    "desc": "Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   }
 ]
