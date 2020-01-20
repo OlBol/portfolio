@@ -40,8 +40,8 @@ export default function headerFixating(options: HeaderOptions) {
                 const position = window.pageYOffset;
 
                 position >= headerHeight && position >= sectionTopPosition && position <= sectionBottomPosition
-                    ? link.classList.add('is-active')
-                    : link.classList.remove('is-active');
+                    ? link.classList.add(activeClass)
+                    : link.classList.remove(activeClass);
             });
         }
     }

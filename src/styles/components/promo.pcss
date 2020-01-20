@@ -54,9 +54,19 @@
             display: flex;
             align-items: center;
             font-size: 18px;
-            font-weight: 400;
+            font-weight: 700;
             color: $main-color;
             text-decoration: none;
+            transition: color $speed;
+
+            &:hover {
+                color: $plum-color;
+
+
+                & .promo__btn-icon {
+                    fill: $plum-color;
+                }
+            }
         }
     }
 
@@ -65,6 +75,26 @@
             width: 30px;
             height: 30px;
             fill: $main-color;
+            transition: fill $speed;
+            animation: bounce 3s infinite;
         }
+    }
+}
+
+@keyframes bounce {
+    0%, 35%, 100% {
+        transform: translateY(0);
+    }
+    5% {
+        transform: translateY(15px);
+    }
+    10% {
+        transform: translateY(-8px);
+    }
+    15% {
+        transform: translateY(10px);
+    }
+    25% {
+        transform: translateY(-4px);
     }
 }
