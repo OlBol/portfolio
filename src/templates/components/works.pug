@@ -41,6 +41,8 @@ script(type='text/x-template')#slider-previews
                 @click='$emit("slide", index)'
                 :class='{active: work.id === currentWork.id}'
                 type='button' aria-label='Миниатюра скриншота'
+                :disabled='work.id === currentWork.id'
+                tabindex='-1'
             )
                 img.works__img(:src='work.photo' alt='Миниатюра скриншота страницы моего проекта')
 
@@ -48,17 +50,17 @@ script(type='text/x-template')#slider-previews
 script(type='text/x-template')#slider-btn
     .works__controls
         button.works__btn.works__btn--prev(
-            @click='$emit("slide", "next")'
+            @click='$emit("slide", "prev")'
             type='button'
             aria-label='Предыдущий слайд'
-            :disabled='currentIndex >= (worksLength - 1)'
+            :disabled='currentIndex <= 0'
         )
             +icon('btn-arrow', 'works__btn-icon')
         button.works__btn.works__btn--next(
-            @click='$emit("slide", "prev")'
+            @click='$emit("slide", "next")'
             type='button'
             aria-label='Следующий слайд'
-            :disabled='currentIndex <= 0'
+            :disabled='currentIndex >= (worksLength - 1)'
         )
             +icon('btn-arrow', 'works__btn-icon works__btn-icon--next'
         )
@@ -71,7 +73,8 @@ script(type='text/x-template')#slider-desc
         h3.works__work-title {{currentWork.title}}
         .works__description.text
             p {{currentWork.description}}
-        a.works__link(:href='currentWork.link') Посмотреть сайт
+        a.works__link(:href='currentWork.link')
+            span.works__link-text Посмотреть сайт
 
 script(type='text/x-template')#slider-tags
     .works__tags
