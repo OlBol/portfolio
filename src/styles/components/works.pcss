@@ -89,24 +89,21 @@
         object-position: top;
     }
 
-    &__preview-work {
-        flex-basis: 100%;
-        min-width: 100%;
-
-        @include tablets {
-            flex-basis: inherit;
-        }
+    &__previews {
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        height: 400px;
+        width: 214px;
+        overflow: hidden;
     }
 
     &__preview-block {
         display: flex;
+        flex-basis: 100%;
+        min-width: 100%;
 
         @include tablets {
-            position: absolute;
-            right: 0;
-            bottom: 50px;
-            height: 350px;
-            width: 178px;
             flex-direction: column;
             overflow: hidden;
         }
@@ -117,6 +114,19 @@
         padding: 0;
         border: 0;
         background-color: transparent;
+        position: relative;
+
+        &.active::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 3px solid $links-color;
+            z-index: 1;
+        }
     }
 
     &__btn {

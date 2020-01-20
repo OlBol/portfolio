@@ -8,13 +8,6 @@ import headerFixating from './scripts/headerFixating.ts';
 import reviewSlider from './scripts/reviewSlider.ts';
 import workSlider from './scripts/workSlider.ts';
 
-// new Vue({
-//     el: "#app-root",
-//     router,
-//     store,
-//     render: h => h(App)
-// });
-
 if (process.env.NODE_ENV === 'development') {
     require('file-loader!./index.pug');
 }
@@ -47,8 +40,8 @@ headerFixating({
 
 reviewSlider({
     slider: document.querySelector('.js-review-slider'),
-    scrollBtnToPrev: document.querySelector('.js-review-slider'),
-    scrollBtnToNext: document.querySelector('.js-review-slider')
+    scrollBtnToPrev: document.querySelector('.js-scroll-to-prev'),
+    scrollBtnToNext: document.querySelector('.js-scroll-to-next')
 });
 
 workSlider();

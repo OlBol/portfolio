@@ -16,6 +16,15 @@ export default function workSlider() {
             works: Array,
             currentWork: Object,
             currentIndex: Number
+        },
+        computed: {
+            translate() {
+                const step = 100 / this.works.length;
+
+                if (this.currentIndex >= this.works.length - 1) return;
+                else if (this.currentIndex < 2) return 0;
+                else if (this.currentIndex >= 2) return step * (this.currentIndex - 1);
+            }
         }
     };
 

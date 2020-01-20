@@ -29,6 +29,11 @@
         text-decoration: none;
         white-space: nowrap;
 
+        @include laptop {
+            border-bottom: 1px solid transparent;
+            transition: border $speed;
+        }
+
         &--header {
             font-size: 16px;
             font-weight: 400;
@@ -47,6 +52,12 @@
 
         &--footer {
             color: $white-color;
+        }
+
+        @include laptop {
+            &--header:hover {
+                border-bottom-color: $main-color;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ###  Чтобы развернуть проект необходимо:
 ```sh
-$ https://github.com/OlBol/advanced-course-project.git
-$ cd advanced-course-project
+$ https://github.com/OlBol/portfolio.git
+$ cd portfolio
 $ npm i 
 ```
 
@@ -29,5 +29,5 @@ $ yarn имя_скрипта
 + Vue (slider)
 + Node (CLI)
 + Pug
-+ SCSS
++ PostCSS
 + Webpack 4

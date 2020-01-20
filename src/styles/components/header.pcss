@@ -3,11 +3,9 @@
     padding: 45px 0;
     width: 100%;
     z-index: 3;
-    transition: background-color $speed, padding $speed;
-
-    @include desktop {
-        padding: 65px 0;
-    }
+    background-color: rgba($white-color, 0);
+    box-shadow: 0 0 0 0 transparent;
+    transition: background-color 1s, padding 1s, box-shadow 1s;
 
     &.is-active {
         padding: 25px 0;

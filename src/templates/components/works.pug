@@ -33,9 +33,11 @@ script(type='text/x-template')#slider-display
         )
 
 script(type='text/x-template')#slider-previews
-    .works__preview-block(:style='{transform: `translateY(-${translate}%)`}')
-        .works__preview-work(v-for='work, index in works' :key='work.id')
+    .works__previews
+        .works__preview-block(:style='{transform: `translateY(-${translate}%)`}')
             button.works__preview-btn(
+                v-for='work, index in works'
+                :key='work.id'
                 @click='$emit("slide", index)'
                 :class='{active: work.id === currentWork.id}'
                 type='button' aria-label='Миниатюра скриншота'
@@ -44,7 +46,7 @@ script(type='text/x-template')#slider-previews
 
 
 script(type='text/x-template')#slider-btn
-    .slider__controls
+    .works__controls
         button.works__btn.works__btn--prev(
             @click='$emit("slide", "next")'
             type='button'
