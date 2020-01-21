@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProductionBuild = argv.mode === 'production';
@@ -103,7 +104,8 @@ module.exports = (env, argv) => {
                 template: './src/index.pug'
             }),
             new SpriteLoaderPlugin({ plainSprite: true }),
-            new VueLoaderPlugin()
+            new VueLoaderPlugin(),
+            new FaviconsWebpackPlugin('./src/images/favicon.png')
         ]
     };
 
