@@ -75,6 +75,15 @@
 
         &--footer {
             color: $white-color;
+
+            @include laptop {
+                border-bottom: 1px solid transparent;
+                transition: border-bottom-color $speed;
+
+                &:hover {
+                    border-bottom-color: $white-color;
+                }
+            }
         }
     }
 }
