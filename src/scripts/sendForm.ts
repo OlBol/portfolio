@@ -15,8 +15,12 @@ export default function sendForm(options: FormOptions) {
     const inputs = form.querySelectorAll('.js-input');
     const action = form.action;
     const method = form.method;
+    const activeClass = 'is-active';
 
     inputs.forEach((input: HTMLInputElement) => {
+        input.addEventListener('focus', addFocusToInput);
+        input.addEventListener('blur', removeFocusFromInput);
+
         if (input.name === 'phone') putPhoneMask(input);
 
     });
@@ -47,6 +51,28 @@ export default function sendForm(options: FormOptions) {
         });
 
         inputmask.mask(input);
+    }
+
+    /**
+     * @description Add active class for label and input wrapper.
+     */
+    function addFocusToInput() {
+        const parent = this.parentElement;
+
+        parent.classList.add(activeClass);
+    }
+
+    /**
+     * @description Remove active class for label and input wrapper.
+     */
+    function removeFocusFromInput() {
+        const parent = this.parentElement;
+
+        parent.classList.remove(activeClass);
+
+        this.value.length === 0
+            ? parent.classList.remove('is-full')
+            : parent.classList.add('is-full');
     }
 
     /**

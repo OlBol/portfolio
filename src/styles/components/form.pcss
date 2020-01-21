@@ -38,30 +38,7 @@
         }
     }
 
-    &__icon {
-        position: absolute;
-        bottom: 15px;
-        left: 0;
-        fill: $gray-color;
-
-        &--name {
-            width: 26px;
-            height: 28px;
-        }
-
-        &--email {
-            width: 26px;
-            height: 28px;
-        }
-
-        &--text {
-            bottom: 22px;
-            width: 26px;
-            height: 28px;
-        }
-    }
-
-    .form__wrap {
+    &__wrap {
         position: relative;
         margin-bottom: 25px;
         flex-basis: 100%;
@@ -118,13 +95,82 @@
         }
     }
 
+    &__wrap.is-active {
+        .form__label--text .form__label-text {
+            top: -38px;
+        }
+
+        .form__label-text {
+            top: -28px;
+            color: $plum-color;
+        }
+
+        .form__icon {
+            fill: $plum-color;
+        }
+
+        .form__input {
+            outline: none;
+            border-bottom-color: $plum-color;
+        }
+    }
+
+    &__wrap.is-full {
+        .form__label--text .form__label-text {
+            top: -38px;
+        }
+
+        .form__label-text {
+            top: -28px;
+        }
+    }
+
     &__label {
-        padding: 10px 45px;
+        position: absolute;
+        padding: 10px 40px;
         display: block;
         opacity: .5;
+        top: 7px;
+
+        &--text {
+            top: 20px;
+        }
+    }
+
+    &__label-text {
+        position: relative;
+        top: 0;
         color: $main-color;
         font-size: 14px;
         font-weight: 600;
+        opacity: 1;
+        transition: top $speed, color $speed, opacity $speed;
+
+        @include laptop {
+            font-size: 16px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        left: 0;
+        fill: $gray-color;
+        transition: fill $speed;
+
+        &--name {
+            width: 26px;
+            height: 28px;
+        }
+
+        &--email {
+            width: 26px;
+            height: 28px;
+        }
+
+        &--text {
+            width: 26px;
+            height: 28px;
+        }
     }
 
     &__input {
@@ -138,6 +184,7 @@
         font-weight: 700;
         line-height: 1.7;
         font-family: "Open Sans", Helvetica, sans-serif;
+        transition: border-bottom-color $speed;
 
         &--text {
             padding: 25px 45px;
@@ -156,10 +203,16 @@
         color: $white-color;
         text-transform: uppercase;
         background-image: linear-gradient(to right, $gradient);
-        font-family: Open Sans,Helvetica,sans-serif;
+        transition: border-radius $speed;
 
         @include tablets {
             padding: 30px 120px;
+        }
+
+        @include laptop {
+            &:hover {
+                border-radius: 0 30px;
+            }
         }
 
         @include desktop {
