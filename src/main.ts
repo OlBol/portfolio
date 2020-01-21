@@ -8,10 +8,6 @@ import headerFixating from './scripts/headerFixating.ts';
 import reviewSlider from './scripts/reviewSlider.ts';
 import workSlider from './scripts/workSlider.ts';
 
-if (process.env.NODE_ENV === 'development') {
-    require('file-loader!./index.pug');
-}
-
 parallax({
     area: document.querySelector('.js-promo-parallax'),
     layers: document.querySelectorAll('.js-promo-layer')

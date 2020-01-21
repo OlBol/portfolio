@@ -12,8 +12,8 @@ export default function reviewSlider(options: SliderOptions) {
     const scrollBtnToPrev = options.scrollBtnToPrev;
     const scrollBtnToNext = options.scrollBtnToNext;
     const numberOfSlides = slider.children.length;
-    const step: number = 15;
-    let sliderPosition: number = 0;
+    const step = 15;
+    let sliderPosition = 0;
     let currentSlide = 1;
     let start: number = null;
     let targetBtn: string = null;

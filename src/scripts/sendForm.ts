@@ -10,7 +10,7 @@ interface FormOptions {
  * @param options {object} - an object with data points to a form element.
  */
 export default function sendForm(options: FormOptions) {
-    const phoneMask: string = '+7 999 99-99-99';
+    const phoneMask = '+7 999 99-99-99';
     const form = options.form as HTMLFormElement;
     const inputs = form.querySelectorAll('.js-input');
     const action = form.action;

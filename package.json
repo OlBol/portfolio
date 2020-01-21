@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "rm -rf dist && webpack --mode=production --progress",
-    "test": "eslint ./src/main.js && stylelint ./src/main.pcss ./src/styles/*.pcss ./src/styles/components/*.pcss",
+    "test": "eslint ./src/**/*.ts && stylelint ./src/main.pcss ./src/styles/*.pcss ./src/styles/components/*.pcss",
     "create-component": "node ./cli/create-component.js"
   },
   "author": "Olga Bolotova",
@@ -16,9 +16,11 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.6.3",
     "@types/inputmask": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
     "babel-loader": "^8.0.6",
     "cssnano": "^4.1.10",
-    "eslint": "^6.5.1",
+    "eslint": "^6.8.0",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",

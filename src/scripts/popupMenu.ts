@@ -8,8 +8,8 @@ interface PopupOptions {
  * @param options – menu button and popup template data.
  */
 export default function popupMenu(options: PopupOptions) {
-        const activeClass: string = 'is-open';
-        const hiddenClass: string = 'is-hidden';
+        const activeClass = 'is-open';
+        const hiddenClass = 'is-hidden';
         const button = options.button;
         const template = options.template;
         const header = document.querySelector('.js-header');

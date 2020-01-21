@@ -1,4 +1,4 @@
-interface formValidateOptions {
+interface FormValidateOptions {
     inputs: NodeListOf<Element>;
 }
 
@@ -8,7 +8,7 @@ interface formValidateOptions {
  * @returns {boolean} – if the input was validated successfully – true, if not - false.
  */
 
-export default function formValidate(options: formValidateOptions) {
+export default function formValidate(options: FormValidateOptions) {
     const inputs = options.inputs;
     const regexp = {
         email  : '^[-._a-zA-Za-яA-я0-9]{2,}@(?:[a-zA-Za-яА-Я0-9][-a-z-A-Z-a-я-А-Я0-9]+\\.)+[a-za-я]{2,6}$',

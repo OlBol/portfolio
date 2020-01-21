@@ -8,7 +8,7 @@ interface ParallaxOptions {
  * @param options – parallax area and parallax layers data.
  */
 export default function parallax(options: ParallaxOptions) {
-    const div: number = 2;
+    const div = 2;
     const area: HTMLElement = options.area;
     const layers: NodeListOf<HTMLElement> = options.layers;
 
