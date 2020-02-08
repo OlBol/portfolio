@@ -91,11 +91,11 @@ export default function formValidate(options: FormValidateOptions) {
      * @param input {HTMLElement} – input element.
      */
     function validatePhone(input: HTMLInputElement) {
-        const regEmail = new RegExp(regexp.phone, 'u');
+        const regPhone = new RegExp(regexp.phone, 'u');
 
         if (!input.value.length) {
             showErrorMessage(input, errorMessageEmpty);
-        } else if (!regEmail.test(input.value)) {
+        } else if (!regPhone.test(input.value)) {
             showErrorMessage(input, errorIncorrectPhoneMessage);
         } else {
             removeErrorMessage(input);
